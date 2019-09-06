@@ -49,7 +49,7 @@ public class TestFitbit {
 	@Test
 	@DisplayName("testStep")
 	public void testStep() throws Exception {
-		File inputFile = new File( HeartRate.class.getClassLoader().getResources("steps-test.json").nextElement().getFile() );
+		File inputFile = new File( Step.class.getClassLoader().getResources("steps-test.json").nextElement().getFile() );
 
 		long t0 = System.currentTimeMillis();
 		try {
@@ -78,7 +78,7 @@ public class TestFitbit {
 	@Test
 	@DisplayName("testSleep")
 	public void testSleep() throws Exception {
-		File inputFile = new File( HeartRate.class.getClassLoader().getResources("sleep-test.json").nextElement().getFile() );
+		File inputFile = new File( Sleep.class.getClassLoader().getResources("sleep-test.json").nextElement().getFile() );
 
 		long t0 = System.currentTimeMillis();
 		try {
@@ -101,5 +101,62 @@ public class TestFitbit {
 		long t1 = System.currentTimeMillis();
 		System.out.printf("time duration: %.03f (sec) ", (t1-t0)/1000d);
 	}
+	
+	
+	/** calories parser Test */
+	@Test
+	@DisplayName("testCalorie")
+	public void testCalorie() throws Exception {
+		File inputFile = new File( Calorie.class.getClassLoader().getResources("calories-test.json").nextElement().getFile() );
 
+		long t0 = System.currentTimeMillis();
+		try {
+			// parse JSON data ////////////////////////////
+			ObjectMapper  jsonMapper = new ObjectMapper();
+			Calorie[]     calories   = jsonMapper.readValue(inputFile, Calorie[].class);
+			
+			// export results /////////////////////////////
+			Arrays.parallelSort(calories);
+			for(Calorie calorie:calories) {
+				System.out.println(calorie);
+			}
+		}
+		catch(JsonMappingException|JsonParseException exp) {
+			exp.printStackTrace();
+		}
+		catch(IOException exp) { 
+			exp.printStackTrace();
+		}
+		long t1 = System.currentTimeMillis();
+		System.out.printf("time duration: %.03f (sec) ", (t1-t0)/1000d);
+	}
+	
+	
+	/** distance parser Test */
+	@Test
+	@DisplayName("testDistance")
+	public void testDistance() throws Exception {
+		File inputFile = new File( Distance.class.getClassLoader().getResources("distance-test.json").nextElement().getFile() );
+
+		long t0 = System.currentTimeMillis();
+		try {
+			// parse JSON data ////////////////////////////
+			ObjectMapper  jsonMapper = new ObjectMapper();
+			Distance[]    distances  = jsonMapper.readValue(inputFile, Distance[].class);
+			
+			// export results /////////////////////////////
+			Arrays.parallelSort(distances);
+			for(Distance distance:distances) {
+				System.out.println(distance);
+			}
+		}
+		catch(JsonMappingException|JsonParseException exp) {
+			exp.printStackTrace();
+		}
+		catch(IOException exp) { 
+			exp.printStackTrace();
+		}
+		long t1 = System.currentTimeMillis();
+		System.out.printf("time duration: %.03f (sec) ", (t1-t0)/1000d);
+	}
 }
