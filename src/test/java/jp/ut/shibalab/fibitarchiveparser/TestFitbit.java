@@ -70,7 +70,7 @@ public class TestFitbit {
 			exp.printStackTrace();
 		}
 		long t1 = System.currentTimeMillis();
-		System.out.printf("time duration: %.03f (sec) ", (t1-t0)/1000d);
+		System.out.printf("time duration: %.03f (sec) \n", (t1-t0)/1000d);
 	}
 	
 
@@ -99,7 +99,7 @@ public class TestFitbit {
 			exp.printStackTrace();
 		}
 		long t1 = System.currentTimeMillis();
-		System.out.printf("time duration: %.03f (sec) ", (t1-t0)/1000d);
+		System.out.printf("time duration: %.03f (sec)\n", (t1-t0)/1000d);
 	}
 	
 	
@@ -128,7 +128,7 @@ public class TestFitbit {
 			exp.printStackTrace();
 		}
 		long t1 = System.currentTimeMillis();
-		System.out.printf("time duration: %.03f (sec) ", (t1-t0)/1000d);
+		System.out.printf("time duration: %.03f (sec)\n", (t1-t0)/1000d);
 	}
 	
 	
@@ -157,6 +157,35 @@ public class TestFitbit {
 			exp.printStackTrace();
 		}
 		long t1 = System.currentTimeMillis();
-		System.out.printf("time duration: %.03f (sec) ", (t1-t0)/1000d);
+		System.out.printf("time duration: %.03f (sec)\n", (t1-t0)/1000d);
+	}
+	
+	
+	/** weight parser Test */
+	@Test
+	@DisplayName("testWeight")
+	public void testWeight() throws Exception {
+		File inputFile = new File( Weight.class.getClassLoader().getResources("weight-test.json").nextElement().getFile() );
+
+		long t0 = System.currentTimeMillis();
+		try {
+			// parse JSON data ////////////////////////////
+			ObjectMapper  jsonMapper = new ObjectMapper();
+			Weight[]      weights    = jsonMapper.readValue(inputFile, Weight[].class);
+			
+			// export results /////////////////////////////
+			Arrays.parallelSort(weights);
+			for(Weight weight:weights) {
+				System.out.println(weight);
+			}
+		}
+		catch(JsonMappingException|JsonParseException exp) {
+			exp.printStackTrace();
+		}
+		catch(IOException exp) { 
+			exp.printStackTrace();
+		}
+		long t1 = System.currentTimeMillis();
+		System.out.printf("time duration: %.03f (sec)\n", (t1-t0)/1000d);
 	}
 }
