@@ -5,34 +5,41 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Class for Heart rate object
+ * Class for Resting Heart Rate
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class HeartRate extends ATimeValue {
+public class RestingHeartRate extends ATimeValue {
 	/* ==============================================================
 	 * static inner class
 	 * ============================================================== */
 	/** Heart Rate value */
 	@JsonIgnoreProperties(ignoreUnknown = true)
 	private static class Value {
-		/** BPM value */
-		@JsonProperty("bpm")
-		private int _bpm;
+		/** date */
+		@JsonProperty("date")
+		private String _date;
 
-		/** confidence */
-		@JsonProperty("confidence")
-		private int _confidence;
+		/** value */
+		@JsonProperty("value")
+		private double _value;
+		
+		/** error */
+		@JsonProperty("error")
+		private double _error;
 	}
 	
 	
 	/* ==============================================================
 	 * instance fields
 	 * ============================================================== */
-	/** BPM value */
-	private int _bpm;
+	/** date */
+	private String _date;
+
+	/** value */
+	private double _value;
 	
-	/** confidence value */
-	private int _confidence;
+	/** error */
+	private double _error;
 	
 	
 	/* ==============================================================
@@ -41,40 +48,49 @@ public class HeartRate extends ATimeValue {
 	/**
 	 * initialization 
 	 * @param dateTime date time string (MM/dd/yy HH:mm:ss)
-	 * @param value Heart rate value
+	 * @param value resting heart rate value
 	 */
 	@JsonCreator
-	protected HeartRate(@JsonProperty("dateTime") String dateTime,
-						@JsonProperty("value")    Value  value)
+	protected RestingHeartRate(@JsonProperty("dateTime") String dateTime,
+					           @JsonProperty("value")    Value  value)
 	{
 		super(dateTime);
 		
-		_bpm        = value._bpm;
-		_confidence = value._confidence;
+		_date  = value._date;
+		_value = value._value;
+		_error = value._error;
 	}
 	
 	
 	/* ==============================================================
 	 * instance methods
-	 * ============================================================== */	
+	 * ============================================================== */
 	/**
-	 * get BPM 
-	 * @return BPM
+	 * get Date 
+	 * @return Date
 	 */
-	public int getBpm() {
-		return _bpm;
+	public String getDate() {
+		return _date;
 	}
 	
 	/**
-	 * get confidence
-	 * @return confidence
+	 * get value 
+	 * @return value
 	 */
-	public int getConfidence() {
-		return _confidence;
+	public double getValue() {
+		return _value;
+	}
+	
+	/**
+	 * get error  value
+	 * @return error value
+	 */
+	public double getError() {
+		return _error;
 	}
 	
 	@Override
 	public String toString() {
-		return String.format("(%s, %d, %d)", getDateTime(), _bpm, _confidence);
+		return String.format("(%s, %s, %f, %f)",getDateTime(), _date, _value, _error);
 	}
 }

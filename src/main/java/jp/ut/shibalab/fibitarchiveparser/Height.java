@@ -5,15 +5,15 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Class for step count (approx. every 1 minute)
+ * Class for Height
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Step extends ATimeValue {	
+public class Height extends ATimeValue {	
 	/* ==============================================================
 	 * instance fields
 	 * ============================================================== */
-	/** Step value */
-	private int _step;
+	/** Height value */
+	private int _height;
 	
 
 	/* ==============================================================
@@ -22,14 +22,14 @@ public class Step extends ATimeValue {
 	/**
 	 * initialization 
 	 * @param dateTime date time string (MM/dd/yy HH:mm:ss)
-	 * @param value step count
+	 * @param value Height count
 	 */
 	@JsonCreator
-	protected Step(@JsonProperty("dateTime") String dateTime,
-				   @JsonProperty("value")    int    value)
+	protected Height(@JsonProperty("dateTime") String dateTime,
+				     @JsonProperty("value")    int    value)
 	{
 		super(dateTime);
-		_step = value;
+		_height = value;
 	}
 	
 	
@@ -37,15 +37,15 @@ public class Step extends ATimeValue {
 	 * instance methods
 	 * ============================================================== */
 	/**
-	 * get step value 
-	 * @return step value
+	 * get Height value (mm) 
+	 * @return Height value (mm)
 	 */
-	public int getStep() {
-		return _step;
+	public int getHeight() {
+		return _height;
 	}
 	
 	@Override
 	public String toString() {
-		return String.format("(%s, %d)", getDateTime(), _step);
+		return String.format("(%s, %d)",getDateTime(), _height);
 	}
 }

@@ -1,0 +1,25 @@
+[{
+  "encodedId" : "228TLJ",
+  "badgeType" : "DAILY_STEPS",
+  "value" : 40000,
+  "timesAchieved" : 1,
+  "dateTime" : "2018-05-04",
+  "name" : "スパイクシューズ (一日40,000歩)",
+  "shortName" : "スパイクシューズ",
+  "earnedMessage" : "初めてのスパイクシューズバッジ獲得おめでとうございます！",
+  "description" : "一日40,000歩",
+  "category" : "今日の歩数",
+  "shareText" : "40,000歩数でスパイクシューズバッジを獲得！#Fitbit"
+},{
+  "encodedId" : "228TPW",
+  "badgeType" : "DAILY_STEPS",
+  "value" : 35000,
+  "timesAchieved" : 4,
+  "dateTime" : "2019-05-26",
+  "name" : "ハイキングブーツ (一日35,000歩)",
+  "shortName" : "ハイキングブーツ",
+  "earnedMessage" : "初めてのハイキングブーツバッジ獲得おめでとうございます！",
+  "description" : "一日35,000歩",
+  "category" : "今日の歩数",
+  "shareText" : "35,000歩数でハイキングブーツバッジを獲得！#Fitbit"
+}]

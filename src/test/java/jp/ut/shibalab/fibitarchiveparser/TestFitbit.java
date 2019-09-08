@@ -15,65 +15,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * class for test
  */
 public class TestFitbit {
-
-	/** HeartRate parser Test */
-	@Test
-	@DisplayName("testHeartRate")
-	public void testHeartRate() throws Exception {
-		File inputFile = new File( HeartRate.class.getClassLoader().getResources("heart_rate-test.json").nextElement().getFile() );
-
-		long t0 = System.currentTimeMillis();
-		try {
-			// parse JSON data ////////////////////////////
-			ObjectMapper    jsonMapper = new ObjectMapper();
-			HeartRate[]     rates      = jsonMapper.readValue(inputFile, HeartRate[].class);
-			
-			// export results /////////////////////////////
-			Arrays.parallelSort(rates);
-			for(HeartRate rate:rates) {
-				System.out.println(rate);
-			}
-		}
-		catch(JsonMappingException|JsonParseException exp) {
-			exp.printStackTrace();
-		}
-		catch(IOException exp) { 
-			exp.printStackTrace();
-		}
-		long t1 = System.currentTimeMillis();
-		System.out.printf("time duration: %.03f (sec) ", (t1-t0)/1000d);
-	}
 	
-
-	/** steps parser Test */
-	@Test
-	@DisplayName("testStep")
-	public void testStep() throws Exception {
-		File inputFile = new File( Step.class.getClassLoader().getResources("steps-test.json").nextElement().getFile() );
-
-		long t0 = System.currentTimeMillis();
-		try {
-			// parse JSON data ////////////////////////////
-			ObjectMapper    jsonMapper = new ObjectMapper();
-			Step[]     steps      = jsonMapper.readValue(inputFile, Step[].class);
-			
-			// export results /////////////////////////////
-			Arrays.parallelSort(steps);
-			for(Step step:steps) {
-				System.out.println(step);
-			}
-		}
-		catch(JsonMappingException|JsonParseException exp) {
-			exp.printStackTrace();
-		}
-		catch(IOException exp) { 
-			exp.printStackTrace();
-		}
-		long t1 = System.currentTimeMillis();
-		System.out.printf("time duration: %.03f (sec) \n", (t1-t0)/1000d);
-	}
-	
-
 	/** steps parser Test */
 	@Test
 	@DisplayName("testSleep")
@@ -103,64 +45,6 @@ public class TestFitbit {
 	}
 	
 	
-	/** calories parser Test */
-	@Test
-	@DisplayName("testCalorie")
-	public void testCalorie() throws Exception {
-		File inputFile = new File( Calorie.class.getClassLoader().getResources("calories-test.json").nextElement().getFile() );
-
-		long t0 = System.currentTimeMillis();
-		try {
-			// parse JSON data ////////////////////////////
-			ObjectMapper  jsonMapper = new ObjectMapper();
-			Calorie[]     calories   = jsonMapper.readValue(inputFile, Calorie[].class);
-			
-			// export results /////////////////////////////
-			Arrays.parallelSort(calories);
-			for(Calorie calorie:calories) {
-				System.out.println(calorie);
-			}
-		}
-		catch(JsonMappingException|JsonParseException exp) {
-			exp.printStackTrace();
-		}
-		catch(IOException exp) { 
-			exp.printStackTrace();
-		}
-		long t1 = System.currentTimeMillis();
-		System.out.printf("time duration: %.03f (sec)\n", (t1-t0)/1000d);
-	}
-	
-	
-	/** distance parser Test */
-	@Test
-	@DisplayName("testDistance")
-	public void testDistance() throws Exception {
-		File inputFile = new File( Distance.class.getClassLoader().getResources("distance-test.json").nextElement().getFile() );
-
-		long t0 = System.currentTimeMillis();
-		try {
-			// parse JSON data ////////////////////////////
-			ObjectMapper  jsonMapper = new ObjectMapper();
-			Distance[]    distances  = jsonMapper.readValue(inputFile, Distance[].class);
-			
-			// export results /////////////////////////////
-			Arrays.parallelSort(distances);
-			for(Distance distance:distances) {
-				System.out.println(distance);
-			}
-		}
-		catch(JsonMappingException|JsonParseException exp) {
-			exp.printStackTrace();
-		}
-		catch(IOException exp) { 
-			exp.printStackTrace();
-		}
-		long t1 = System.currentTimeMillis();
-		System.out.printf("time duration: %.03f (sec)\n", (t1-t0)/1000d);
-	}
-	
-	
 	/** weight parser Test */
 	@Test
 	@DisplayName("testWeight")
@@ -177,6 +61,64 @@ public class TestFitbit {
 			Arrays.parallelSort(weights);
 			for(Weight weight:weights) {
 				System.out.println(weight);
+			}
+		}
+		catch(JsonMappingException|JsonParseException exp) {
+			exp.printStackTrace();
+		}
+		catch(IOException exp) { 
+			exp.printStackTrace();
+		}
+		long t1 = System.currentTimeMillis();
+		System.out.printf("time duration: %.03f (sec)\n", (t1-t0)/1000d);
+	}
+
+	
+	/** exercise parser Test */
+	@Test
+	@DisplayName("testExercise")
+	public void testExercise() throws Exception {
+		File inputFile = new File( Exercise.class.getClassLoader().getResources("exercise-test.json").nextElement().getFile() );
+
+		long t0 = System.currentTimeMillis();
+		try {
+			// parse JSON data ////////////////////////////
+			ObjectMapper  jsonMapper = new ObjectMapper();
+			Exercise[]    exercises  = jsonMapper.readValue(inputFile, Exercise[].class);
+			
+			// export results /////////////////////////////
+			Arrays.parallelSort(exercises);
+			for(Exercise exercise:exercises) {
+				System.out.println(exercise);
+			}
+		}
+		catch(JsonMappingException|JsonParseException exp) {
+			exp.printStackTrace();
+		}
+		catch(IOException exp) { 
+			exp.printStackTrace();
+		}
+		long t1 = System.currentTimeMillis();
+		System.out.printf("time duration: %.03f (sec)\n", (t1-t0)/1000d);
+	}
+	
+
+	/** badge parser Test */
+	@Test
+	@DisplayName("testBadge")
+	public void testBadge() throws Exception {
+		File inputFile = new File( Badge.class.getClassLoader().getResources("badge-test.json").nextElement().getFile() );
+
+		long t0 = System.currentTimeMillis();
+		try {
+			// parse JSON data ////////////////////////////
+			ObjectMapper jsonMapper = new ObjectMapper();
+			Badge[]      badges     = jsonMapper.readValue(inputFile, Badge[].class);
+			
+			// export results /////////////////////////////
+			Arrays.parallelSort(badges);
+			for(Badge badge:badges) {
+				System.out.println(badge);
 			}
 		}
 		catch(JsonMappingException|JsonParseException exp) {

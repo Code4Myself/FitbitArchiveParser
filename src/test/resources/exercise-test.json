@@ -1,0 +1,225 @@
+[{
+  "logId" : 24909148953,
+  "activityName" : "ウォーキング",
+  "activityTypeId" : 90013,
+  "activityLevel" : [{
+    "minutes" : 0,
+    "name" : "sedentary"
+  },{
+    "minutes" : 2,
+    "name" : "lightly"
+  },{
+    "minutes" : 2,
+    "name" : "fairly"
+  },{
+    "minutes" : 12,
+    "name" : "very"
+  }],
+  "averageHeartRate" : 101,
+  "calories" : 126,
+  "duration" : 921000,
+  "activeDuration" : 921000,
+  "steps" : 1517,
+  "logType" : "auto_detected",
+  "manualValuesSpecified" : {
+    "calories" : false,
+    "distance" : false,
+    "steps" : false
+  },
+  "heartRateZones" : [{
+    "name" : "範囲外",
+    "min" : 30,
+    "max" : 91,
+    "minutes" : 2
+  },{
+    "name" : "脂肪燃焼",
+    "min" : 91,
+    "max" : 127,
+    "minutes" : 14
+  },{
+    "name" : "有酸素運動",
+    "min" : 127,
+    "max" : 154,
+    "minutes" : 0
+  },{
+    "name" : "ピーク",
+    "min" : 154,
+    "max" : 220,
+    "minutes" : 0
+  }],
+  "lastModified" : "09/03/19 08:41:57",
+  "startTime" : "09/02/19 02:53:53",
+  "originalStartTime" : "09/02/19 02:53:53",
+  "originalDuration" : 921000,
+  "elevationGain" : 12.192,
+  "hasGps" : false,
+  "shouldFetchDetails" : false
+},{
+  "logId" : 24909148954,
+  "activityName" : "ウォーキング",
+  "activityTypeId" : 90013,
+  "activityLevel" : [{
+    "minutes" : 0,
+    "name" : "sedentary"
+  },{
+    "minutes" : 4,
+    "name" : "lightly"
+  },{
+    "minutes" : 4,
+    "name" : "fairly"
+  },{
+    "minutes" : 9,
+    "name" : "very"
+  }],
+  "averageHeartRate" : 89,
+  "calories" : 121,
+  "duration" : 1075000,
+  "activeDuration" : 1075000,
+  "steps" : 1612,
+  "logType" : "auto_detected",
+  "manualValuesSpecified" : {
+    "calories" : false,
+    "distance" : false,
+    "steps" : false
+  },
+  "heartRateZones" : [{
+    "name" : "範囲外",
+    "min" : 30,
+    "max" : 91,
+    "minutes" : 14
+  },{
+    "name" : "脂肪燃焼",
+    "min" : 91,
+    "max" : 127,
+    "minutes" : 4
+  },{
+    "name" : "有酸素運動",
+    "min" : 127,
+    "max" : 154,
+    "minutes" : 0
+  },{
+    "name" : "ピーク",
+    "min" : 154,
+    "max" : 220,
+    "minutes" : 0
+  }],
+  "lastModified" : "09/03/19 08:41:57",
+  "startTime" : "09/02/19 12:27:19",
+  "originalStartTime" : "09/02/19 12:27:19",
+  "originalDuration" : 1075000,
+  "elevationGain" : 12.192,
+  "hasGps" : false,
+  "shouldFetchDetails" : false
+},{
+  "logId" : 24909148956,
+  "activityName" : "ウォーキング",
+  "activityTypeId" : 90013,
+  "activityLevel" : [{
+    "minutes" : 0,
+    "name" : "sedentary"
+  },{
+    "minutes" : 1,
+    "name" : "lightly"
+  },{
+    "minutes" : 0,
+    "name" : "fairly"
+  },{
+    "minutes" : 16,
+    "name" : "very"
+  }],
+  "averageHeartRate" : 91,
+  "calories" : 126,
+  "duration" : 1075000,
+  "activeDuration" : 1075000,
+  "steps" : 1729,
+  "logType" : "auto_detected",
+  "manualValuesSpecified" : {
+    "calories" : false,
+    "distance" : false,
+    "steps" : false
+  },
+  "heartRateZones" : [{
+    "name" : "範囲外",
+    "min" : 30,
+    "max" : 91,
+    "minutes" : 9
+  },{
+    "name" : "脂肪燃焼",
+    "min" : 91,
+    "max" : 127,
+    "minutes" : 8
+  },{
+    "name" : "有酸素運動",
+    "min" : 127,
+    "max" : 154,
+    "minutes" : 0
+  },{
+    "name" : "ピーク",
+    "min" : 154,
+    "max" : 220,
+    "minutes" : 0
+  }],
+  "lastModified" : "09/03/19 08:41:57",
+  "startTime" : "09/02/19 13:27:03",
+  "originalStartTime" : "09/02/19 13:27:03",
+  "originalDuration" : 1075000,
+  "elevationGain" : 3.048,
+  "hasGps" : false,
+  "shouldFetchDetails" : false
+},{
+  "logId" : 24909148959,
+  "activityName" : "ウォーキング",
+  "activityTypeId" : 90013,
+  "activityLevel" : [{
+    "minutes" : 0,
+    "name" : "sedentary"
+  },{
+    "minutes" : 0,
+    "name" : "lightly"
+  },{
+    "minutes" : 4,
+    "name" : "fairly"
+  },{
+    "minutes" : 14,
+    "name" : "very"
+  }],
+  "averageHeartRate" : 94,
+  "calories" : 135,
+  "duration" : 1126000,
+  "activeDuration" : 1126000,
+  "steps" : 1793,
+  "logType" : "auto_detected",
+  "manualValuesSpecified" : {
+    "calories" : false,
+    "distance" : false,
+    "steps" : false
+  },
+  "heartRateZones" : [{
+    "name" : "範囲外",
+    "min" : 30,
+    "max" : 91,
+    "minutes" : 4
+  },{
+    "name" : "脂肪燃焼",
+    "min" : 91,
+    "max" : 127,
+    "minutes" : 15
+  },{
+    "name" : "有酸素運動",
+    "min" : 127,
+    "max" : 154,
+    "minutes" : 0
+  },{
+    "name" : "ピーク",
+    "min" : 154,
+    "max" : 220,
+    "minutes" : 0
+  }],
+  "lastModified" : "09/03/19 08:41:57",
+  "startTime" : "09/02/19 23:15:51",
+  "originalStartTime" : "09/02/19 23:15:51",
+  "originalDuration" : 1126000,
+  "elevationGain" : 0.0,
+  "hasGps" : false,
+  "shouldFetchDetails" : false
+}]
