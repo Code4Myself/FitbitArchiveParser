@@ -1,5 +1,7 @@
 package jp.ut.shibalab.fibitarchiveparser;
 
+import org.apache.commons.lang3.StringUtils;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -8,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Class for Badge data
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Badge implements Comparable<Badge> {	
+public class Badge implements Comparable<Badge>, ICsv {	
 	/* ==============================================================
 	 * instance fields
 	 * ============================================================== */
@@ -192,5 +194,26 @@ public class Badge implements Comparable<Badge> {
     	}
     	
     	return getDateTime().compareTo(obj.getDateTime());
+	}
+	
+	@Override
+	public String toCsvString() {
+		return toCsvString("\t");
+	}
+	
+	@Override
+	public String toCsvString(String delim) {
+		return StringUtils.join(new String[] {getEncodedId(),
+											  getBadgeType(), 
+											  String.valueOf(getValue()), 
+											  String.valueOf(getTimesAchieved()), 
+											  getDateTime(), 
+											  getName(), 
+											  getShortName(), 
+											  getEarnedMessage(), 
+											  getDescription(), 
+											  getCategory(), 
+											  getShareText()  }, 
+								delim);
 	}
 }

@@ -1,5 +1,10 @@
 package jp.ut.shibalab.fibitarchiveparser;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+
+import org.apache.commons.lang3.StringUtils;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -108,5 +113,16 @@ public class DemographicVo2Max extends ATimeValue {
 	@Override
 	public String toString() {
 		return String.format("(%s, %f, %f, %f, %f)",getDateTime(), getValue(), getError(), getFilteredValue(), getFilteredError()); 
+	}
+	
+	@Override
+	public String toCsvString(String delim) {
+		LocalDateTime ldt = LocalDateTime.ofInstant(getDateTime().toInstant(), ZoneId.systemDefault());
+		return StringUtils.join(new String[] {ldt.format(DATETIME_FORMAT),
+											  String.valueOf(getValue()), 
+											  String.valueOf(getError()), 
+											  String.valueOf(getFilteredValue()), 
+											  String.valueOf(getFilteredError()) }, 
+								delim);
 	}
 }

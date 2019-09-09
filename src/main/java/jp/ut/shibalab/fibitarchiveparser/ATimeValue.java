@@ -8,7 +8,7 @@ import java.util.Date;
 /**
  * abstract class for date time value 
  */
-public abstract class ATimeValue implements Comparable<ATimeValue> {	
+public abstract class ATimeValue implements Comparable<ATimeValue>, ICsv {
 	/* ==============================================================
 	 * instance fields
 	 * ============================================================== */
@@ -56,5 +56,10 @@ public abstract class ATimeValue implements Comparable<ATimeValue> {
     	}
     	
     	return getDateTime().compareTo(obj.getDateTime());
+	}
+	
+	@Override
+	public String toCsvString() {
+		return toCsvString("\t");
 	}
 }

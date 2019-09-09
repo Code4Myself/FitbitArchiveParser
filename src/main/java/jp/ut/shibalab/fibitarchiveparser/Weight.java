@@ -5,6 +5,8 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
+import org.apache.commons.lang3.StringUtils;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -13,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Class for Weight data
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Weight implements Comparable<Weight> {	
+public class Weight implements Comparable<Weight>, ICsv {	
 	/* ==============================================================
 	 * instance fields
 	 * ============================================================== */
@@ -141,5 +143,22 @@ public class Weight implements Comparable<Weight> {
     	}
     	
     	return getDateTime().compareTo(obj.getDateTime());
+	}
+	
+	@Override
+	public String toCsvString() {
+		return toCsvString("\t");
+	}
+	
+	@Override
+	public String toCsvString(String delim) {
+		LocalDateTime ldt = LocalDateTime.ofInstant(getDateTime().toInstant(), ZoneId.systemDefault());
+		return StringUtils.join(new String[] {String.valueOf(getLogId()), 
+											  String.valueOf(getWeight()), 
+											  String.valueOf(getBmi()), 
+											  String.valueOf(getFat()),
+											  ldt.format(DATETIME_FORMAT), 
+											  String.valueOf(getSource()) }, 
+								delim);
 	}
 }

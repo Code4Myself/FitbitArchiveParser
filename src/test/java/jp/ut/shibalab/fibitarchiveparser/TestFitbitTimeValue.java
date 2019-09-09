@@ -31,7 +31,7 @@ public class TestFitbitTimeValue {
 			// export results /////////////////////////////
 			Arrays.parallelSort(rates);
 			for(HeartRate rate:rates) {
-				System.out.println(rate);
+				System.out.println(rate.toCsvString());
 			}
 		}
 		catch(JsonMappingException|JsonParseException exp) {
@@ -60,7 +60,7 @@ public class TestFitbitTimeValue {
 			Arrays.parallelSort(steps);
 			System.out.println("(Step)");
 			for(Step step:steps) {
-				System.out.println(step);
+				System.out.println(step.toCsvString());
 			}
 		}
 		catch(JsonMappingException|JsonParseException exp) {
@@ -90,7 +90,7 @@ public class TestFitbitTimeValue {
 			Arrays.parallelSort(calories);
 			System.out.println("(Calories)");
 			for(Calorie calorie:calories) {
-				System.out.println(calorie);
+				System.out.println(calorie.toCsvString());
 			}
 		}
 		catch(JsonMappingException|JsonParseException exp) {
@@ -120,7 +120,7 @@ public class TestFitbitTimeValue {
 			Arrays.parallelSort(distances);
 			System.out.println("(Distance)");
 			for(Distance distance:distances) {
-				System.out.println(distance);
+				System.out.println(distance.toCsvString());
 			}
 		}
 		catch(JsonMappingException|JsonParseException exp) {
@@ -150,7 +150,7 @@ public class TestFitbitTimeValue {
 			Arrays.parallelSort(altitudes);
 			System.out.println("(Altitude)");
 			for(Altitude altitude:altitudes) {
-				System.out.println(altitude);
+				System.out.println(altitude.toCsvString());
 			}
 		}
 		catch(JsonMappingException|JsonParseException exp) {
@@ -180,7 +180,7 @@ public class TestFitbitTimeValue {
 			Arrays.parallelSort(heights);
 			System.out.println("(Height)");
 			for(Height height:heights) {
-				System.out.println(height);
+				System.out.println(height.toCsvString());
 			}
 		}
 		catch(JsonMappingException|JsonParseException exp) {
@@ -210,7 +210,7 @@ public class TestFitbitTimeValue {
 			Arrays.parallelSort(lightlyActiveMinutes);
 			System.out.println("(LightlyActiveMinute)");
 			for(LightlyActiveMinute lightlyActiveMinute:lightlyActiveMinutes) {
-				System.out.println(lightlyActiveMinute);
+				System.out.println(lightlyActiveMinute.toCsvString());
 			}
 		}
 		catch(JsonMappingException|JsonParseException exp) {
@@ -240,7 +240,7 @@ public class TestFitbitTimeValue {
 			Arrays.parallelSort(moderatelyActiveMinutes);
 			System.out.println("(ModeratelyActiveMinute)");
 			for(ModeratelyActiveMinute moderatelyActiveMinute:moderatelyActiveMinutes) {
-				System.out.println(moderatelyActiveMinute);
+				System.out.println(moderatelyActiveMinute.toCsvString());
 			}
 		}
 		catch(JsonMappingException|JsonParseException exp) {
@@ -270,7 +270,7 @@ public class TestFitbitTimeValue {
 			Arrays.parallelSort(veryActiveMinutes);
 			System.out.println("(VeryActiveMinute)");
 			for(VeryActiveMinute veryActiveMinute:veryActiveMinutes) {
-				System.out.println(veryActiveMinute);
+				System.out.println(veryActiveMinute.toCsvString());
 			}
 		}
 		catch(JsonMappingException|JsonParseException exp) {
@@ -300,7 +300,7 @@ public class TestFitbitTimeValue {
 			Arrays.parallelSort(sedentaryMinutes);
 			System.out.println("(SedentaryMinute)");
 			for(SedentaryMinute sedentaryMinute:sedentaryMinutes) {
-				System.out.println(sedentaryMinute);
+				System.out.println(sedentaryMinute.toCsvString());
 			}
 		}
 		catch(JsonMappingException|JsonParseException exp) {
@@ -330,7 +330,7 @@ public class TestFitbitTimeValue {
 			Arrays.parallelSort(restingHeartRates);
 			System.out.println("(RestingHeartRate)");
 			for(RestingHeartRate restingHeartRate:restingHeartRates) {
-				System.out.println(restingHeartRate);
+				System.out.println(restingHeartRate.toCsvString());
 			}
 		}
 		catch(JsonMappingException|JsonParseException exp) {
@@ -360,7 +360,7 @@ public class TestFitbitTimeValue {
 			Arrays.parallelSort(demographicVo2Maxs);
 			System.out.println("(DemographicVo2Max)");
 			for(DemographicVo2Max demographicVo2Max:demographicVo2Maxs) {
-				System.out.println(demographicVo2Max);
+				System.out.println(demographicVo2Max.toCsvString());
 			}
 		}
 		catch(JsonMappingException|JsonParseException exp) {
@@ -390,7 +390,7 @@ public class TestFitbitTimeValue {
 			Arrays.parallelSort(timeInHeartRateZones);
 			System.out.println("(TimeInHeartRateZone)");
 			for(TimeInHeartRateZone timeInHeartRateZone:timeInHeartRateZones) {
-				System.out.println(timeInHeartRateZone);
+				System.out.println(timeInHeartRateZone.toCsvString());
 			}
 		}
 		catch(JsonMappingException|JsonParseException exp) {
