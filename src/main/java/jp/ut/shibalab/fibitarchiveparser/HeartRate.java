@@ -29,6 +29,31 @@ public class HeartRate extends ATimeValue {
 		private int _confidence;
 	}
 	
+	/* ==============================================================
+	 * instance fields
+	 * ============================================================== */
+	/**
+	 * get CSV header
+	 * @return csv header line
+	 */
+	public static String getCsvHeader() { 
+		return getCsvHeader("\t");
+	}
+	
+	/**
+	 * get CSV header 	
+	 * @param delim delimiter 
+	 * @return csv header line
+	 */
+	public static String getCsvHeader(String delim) { 
+		String[] tokens = new String[] {
+			"timestamp",
+			"bmp",
+			"confidence"
+		};
+		return StringUtils.join(tokens,delim);
+	}
+	
 	
 	/* ==============================================================
 	 * instance fields
