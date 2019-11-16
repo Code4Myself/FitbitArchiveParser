@@ -13,7 +13,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<commons.lang.version>3.5</commons.lang.version>
-		<jackson.version>2.9.7</jackson.version>
+		<jackson.version>[2.9.10.1,)</jackson.version>
 	</properties>
 
 
